@@ -15,8 +15,9 @@ public class EstatisticasController {
     private final EstatisticasService estatisticasService;
 
     public ResponseEntity<EstatisticasResponseDTO> buscarEstatisticas(
-            @RequestParam(value = "intevalorBusca", required = false, defaultValue = "60") Integer intervaloBusca){
-       return new ResponseEntity.ok(estatisticasService.calcularEstatisticasTransacoes(intervaloBusca));
+            @RequestParam(value = "intervaloBusca", required = false, defaultValue = "60") Integer intervaloBusca){
+        return ResponseEntity.ok(
+                estatisticasService.calcularEstatisticasTransacoes(intervaloBusca));
     }
 
 }
